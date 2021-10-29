@@ -82,7 +82,7 @@ func makepredictions(myStrings: [String]){
 func talk(words: String){
     let utterance = AVSpeechUtterance(string: words)
     utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
-    utterance.rate = 0.4
+    utterance.rate = 0.3
 
     let synthesizer = AVSpeechSynthesizer()
     synthesizer.speak(utterance)

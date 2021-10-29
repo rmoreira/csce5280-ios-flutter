@@ -46,6 +46,8 @@ struct menu: View {
                     do {
                         let data = try String(contentsOfFile: path, encoding: .utf8)
                         myStrings = data.components(separatedBy: .newlines)
+                        print("path: \(path)")
+                        print("fin del path")
                         
                     } catch {
                         print(error)
