@@ -648,7 +648,7 @@ extension Array {
 do {
 //    var modelPath = Bundle.main.path(forResource: "model", ofType: "tflite")
     // Initialize an interpreter with the model.
-    let interpreter = try Interpreter(modelPath: "model.tflite")
+    let interpreter = try Interpreter(modelPath: "/Users/rafael-moreira/school/csce5280/csce5280-ios-flutter/move/Model/MyPlayground.playground/Resources/model.tflite")
 //    print("\(modelPath)")
     let fileManager = FileManager.default
     // Check if file exists
