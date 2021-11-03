@@ -8,6 +8,8 @@
 import SwiftUI
 import AVFoundation
 import CoreMotion
+//import TensorFlowLite
+
 struct actions: View {
     let motion = CMMotionManager()
     let sf:Double = 1/60
@@ -20,7 +22,8 @@ struct actions: View {
     @State var Yarry:[Double] = []
     @State var Zarry:[Double] = []
     @State var XYZ:[[Double]] = [[],[],[]]
-    @State var time:(Double) = 5
+    @State var time:(Double) = 3
+    
     var body: some View {
         VStack{
             timerDis(to: $to,time: $time).padding().onReceive(timer) { input in
@@ -70,12 +73,45 @@ struct actions: View {
     }
 }
 func makepredictions(myStrings: [String]){
+    // Getting model path
 
-    let randomInt = Int.random(in: 0..<myStrings.count)
-    let defaults = UserDefaults.standard
-    let sentcurrent = defaults.object(forKey:"SavedArray") as? [String] ?? myStrings
-    print("\(myStrings[randomInt]) word \(sentcurrent[randomInt])")
-    talk(words: "\(myStrings[randomInt]) word \(sentcurrent[randomInt])")
+//    let modelPath = Bundle.main.path(forResource: "model", ofType: "tflite")
+
+    do {
+        // Initialize an interpreter with the model.
+//        let interpreter = try Interpreter(modelPath: "\(modelPath)")
+//
+//        // Allocate memory for the model's input `Tensor`s.
+//        try interpreter.allocateTensors()
+//
+//        let inputData: Data  // Should be initialized
+//
+//        // input data preparation...
+//
+//        // Copy the input data to the input `Tensor`.
+//        try interpreter.copy(inputData, toInputAt: 0)
+//
+//        // Run inference by invoking the `Interpreter`.
+//        try interpreter.invoke()
+//
+//        // Get the output `Tensor`
+//        let outputTensor = try interpreter.output(at: 0)
+//
+//        // Copy output to `Data` to process the inference results.
+//        let outputSize = outputTensor.shape.dimensions.reduce(1, {x, y in x * y})
+//        let outputData =
+//            UnsafeMutableBufferPointer<Float32>.allocate(capacity: outputSize)
+//        outputTensor.data.copyBytes(to: outputData)
+
+        let randomInt = Int.random(in: 0..<myStrings.count)
+        let defaults = UserDefaults.standard
+        let sentcurrent = defaults.object(forKey:"SavedArray") as? [String] ?? myStrings
+        print("\(myStrings[randomInt]) word \(sentcurrent[randomInt])")
+        talk(words: "\(myStrings[randomInt]) word \(sentcurrent[randomInt])")
+    } catch {
+            print("Unexpected error")
+        }
+
 
 }
 
