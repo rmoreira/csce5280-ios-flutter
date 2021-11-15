@@ -1,11 +1,5 @@
-//
-//  moveApp.swift
-//  move
-//
-//  Created by Emmanuel Zambrano Quitian on 10/22/21.
-//
+import UIKit
 
-import SwiftUI
 import Foundation
 
 // Source: https://stackoverflow.com/questions/28219848/how-to-download-file-in-swift
@@ -98,15 +92,5 @@ class FileDownloader {
 
 let url = URL(string: "https://drive.google.com/file/d/1a3VlAiJVJQtjRLjBLE_BXCME8RFCXbct/view?usp=sharing")
 FileDownloader.loadFileAsync(url: url!) { (path, error) in
-    print("PDF File downloaded to : \(path!)")
-}
-
-
-@main
-struct moveApp: App {
-    var body: some Scene {
-        WindowGroup {
-            menu()
-        }
-    }
+    print("File downloaded to : \(path!)")
 }

@@ -1,0 +1,11 @@
+circle
+dab
+drinking
+lineH
+lineV
+outwardsL
+outwardsR
+semicircle
+towards
+waving
+xmark

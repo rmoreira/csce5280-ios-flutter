@@ -8,7 +8,13 @@
 import SwiftUI
 import AVFoundation
 import CoreMotion
-//import TensorFlowLite
+import TensorFlowLite
+
+extension FileManager {
+    func documentDirectory() -> URL {
+        return self.urls(for: .documentDirectory, in: .userDomainMask)[0]
+    }
+}
 
 struct actions: View {
     let motion = CMMotionManager()
@@ -77,42 +83,60 @@ func makepredictions(myStrings: [String]){
 
 //    let modelPath = Bundle.main.path(forResource: "model", ofType: "tflite")
 
-    do {
-        // Initialize an interpreter with the model.
-//        let interpreter = try Interpreter(modelPath: "\(modelPath)")
+//    do {
+//        // Initialize an interpreter with the model.
+////        let interpreter = try Interpreter(modelPath: "\(modelPath)")
+////
+////        // Allocate memory for the model's input `Tensor`s.
+////        try interpreter.allocateTensors()
+////
+////        let inputData: Data  // Should be initialized
+////
+////        // input data preparation...
+////
+////        // Copy the input data to the input `Tensor`.
+////        try interpreter.copy(inputData, toInputAt: 0)
+////
+////        // Run inference by invoking the `Interpreter`.
+////        try interpreter.invoke()
+////
+////        // Get the output `Tensor`
+////        let outputTensor = try interpreter.output(at: 0)
+////
+////        // Copy output to `Data` to process the inference results.
+////        let outputSize = outputTensor.shape.dimensions.reduce(1, {x, y in x * y})
+////        let outputData =
+////            UnsafeMutableBufferPointer<Float32>.allocate(capacity: outputSize)
+////        outputTensor.data.copyBytes(to: outputData)
+//    //    print("\(modelPath)")
+//        let fileManager = FileManager.default
+////        // Check if file exists
+////        let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("labels.txt")
+////        do {
+////            let todos = try String(contentsOf: path)
+////
+////            for todo in todos.split(separator: ";") {
+////                talk(words: "\(todo)")
+////            }
+////        } catch {
+////            talk(words: "\(error.localizedDescription)")
+////        }
+////        let path = Bundle.main.url(forResource: "labels", withExtension: "txt")
+//        if fileManager.fileExists(atPath: "labels.txt") {
+//            talk(words: "File exists")
+//        } else {
+//            talk(words: "File does not exist")
+//        }
 //
-//        // Allocate memory for the model's input `Tensor`s.
-//        try interpreter.allocateTensors()
-//
-//        let inputData: Data  // Should be initialized
-//
-//        // input data preparation...
-//
-//        // Copy the input data to the input `Tensor`.
-//        try interpreter.copy(inputData, toInputAt: 0)
-//
-//        // Run inference by invoking the `Interpreter`.
-//        try interpreter.invoke()
-//
-//        // Get the output `Tensor`
-//        let outputTensor = try interpreter.output(at: 0)
-//
-//        // Copy output to `Data` to process the inference results.
-//        let outputSize = outputTensor.shape.dimensions.reduce(1, {x, y in x * y})
-//        let outputData =
-//            UnsafeMutableBufferPointer<Float32>.allocate(capacity: outputSize)
-//        outputTensor.data.copyBytes(to: outputData)
-
-        let randomInt = Int.random(in: 0..<myStrings.count)
-        let defaults = UserDefaults.standard
-        let sentcurrent = defaults.object(forKey:"SavedArray") as? [String] ?? myStrings
-        print("\(myStrings[randomInt]) word \(sentcurrent[randomInt])")
-        talk(words: "\(myStrings[randomInt]) word \(sentcurrent[randomInt])")
-    } catch {
-            print("Unexpected error")
-        }
-
-
+////        let randomInt = Int.random(in: 0..<myStrings.count)
+////        let defaults = UserDefaults.standard
+////        let sentcurrent = defaults.object(forKey:"SavedArray") as? [String] ?? myStrings
+////        print("\(myStrings[randomInt]) word \(sentcurrent[randomInt])")
+////        talk(words: "\(myStrings[randomInt]) word \(sentcurrent[randomInt])")
+//    } catch {
+//        let _ = print("Unexpected error")
+//        }
+    
 }
 
 func talk(words: String){

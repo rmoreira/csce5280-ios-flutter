@@ -31,9 +31,10 @@
 		6774CB6D2725D2FF00973314 /* data.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = data.txt; sourceTree = "<group>"; };
 		678B4B2B2726F8150074E21C /* motions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = motions.swift; sourceTree = "<group>"; };
 		67AC424B272450E20040D982 /* menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menu.swift; sourceTree = "<group>"; };
-		67AC424D272454DF0040D982 /* actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = actions.swift; sourceTree = "<group>"; };
+		67AC424D272454DF0040D982 /* actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = actions.swift; path = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.0.sdk/../../../../../../../../../Users/rafael-moreira/school/csce5280/csce5280-ios-flutter/move/tabs/actions.swift"; sourceTree = "<absolute>"; };
 		94B0FA19D71292F0BBDCD871 /* Pods-move.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-move.release.xcconfig"; path = "Target Support Files/Pods-move/Pods-move.release.xcconfig"; sourceTree = "<group>"; };
 		DD23917A272B951500EE0DD7 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		DD9828F727430D80009FEB4F /* MyPlayground2.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground2.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +104,7 @@
 				67191BBD2723BD970036E9EB /* ContentView.swift */,
 				67AC424D272454DF0040D982 /* actions.swift */,
 				678B4B2B2726F8150074E21C /* motions.swift */,
+				DD9828F727430D80009FEB4F /* MyPlayground2.playground */,
 			);
 			path = tabs;
 			sourceTree = "<group>";
@@ -357,7 +359,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"move/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "newdatamodel.tflite labels.txt move/Preview\\ Content";
 				DEVELOPMENT_TEAM = ZC6M768RJ2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -388,7 +390,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"move/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "newdatamodel.tflite labels.txt move/Preview\\ Content";
 				DEVELOPMENT_TEAM = ZC6M768RJ2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
