@@ -652,97 +652,51 @@ extension FileManager {
 
 do {
 //    var modelPath = Bundle.main.path(forResource: "model", ofType: "tflite")
-    // Initialize an interpreter with the model.
-//    let interpreter = try Interpreter(modelPath: "/Users/rafael-moreira/school/csce5280/csce5280-ios-flutter/move/Model/MyPlayground.playground/Resources/model.tflite")
-////    print("\(modelPath)")
-//    let fileManager = FileManager.default
-//    // Check if file exists
-//    if fileManager.fileExists(atPath: "/Users/rafael-moreira/school/csce5280/csce5280-ios-flutter/move/Model/MyPlayground.playground/Resources/model.tflite") {
-//        print("File exists")
-//    } else {
-//        print("File does not exist")
-//    }
-//
-////     Allocate memory for the model's input `Tensor`s.
-//    try interpreter.allocateTensors()
-//    
-//    var arr = [Data]()
-//    for x in mydata2 {
-//        arr.append(Data(copyingBufferOf: x))
-//    }
-//    
-//    let inputData = Data(copyingBufferOf: arr)  // Should be initialized
-////     input data preparation...
-//   
-//    // Copy the input data to the input `Tensor`.
-//    try interpreter.copy(inputData, toInputAt: 0)
-//
-//    // Run inference by invoking the `Interpreter`.
-//    try interpreter.invoke()
-//
-//    // Get the output `Tensor`
-//    let outputTensor = try interpreter.output(at: 0)
-//
-//    // Copy output to `Data` to process the inference results.
-//    let outputSize = outputTensor.shape.dimensions.reduce(1, {x, y in x * y})
-//    let outputData =
-//        UnsafeMutableBufferPointer<Float32>.allocate(capacity: outputSize)
-//    outputTensor.data.copyBytes(to: outputData)
-//    
-//    let fileContents = try? String(contentsOfFile: "/Users/rafael-moreira/school/csce5280/csce5280-ios-flutter/move/Model/MyPlayground.playground/Resources/labels.txt")
-//    let labels = fileContents?.components(separatedBy: "\n")
-//    print(labels)
-//    for i in 0 ..< labels!.count {
-//        if let probability:Float32? = outputData[i] {
-//        print("\(labels![i]): \(probability!)")
-//      }
-//    }
-    
-    
-//    let fileManager = FileManager.default
-//        // Check if file exists
-//        let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("labels.txt")
-//        do {
-//            let todos = try String(contentsOf: path)
-//
-//            for todo in todos.split(separator: ";") {
-//                talk(words: "\(todo)")
-//            }
-//        } catch {
-//            talk(words: "\(error.localizedDescription)")
-//        }
-//    let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("labels.txt")
-//    if fileManager.fileExists(atPath: "\(path)") {
-//        print(path)
-//        print("File exists")
-//    } else {
-//        print(path)
-//        prin("File does not exist")
-//    }
+//  Initialize an interpreter with the model.
+    let interpreter = try Interpreter(modelPath: "/Users/rafael-moreira/school/csce5280/csce5280-ios-flutter/move/Model/MyPlayground.playground/Resources/model.tflite")
+//    print("\(modelPath)")
+    let fileManager = FileManager.default
+    // Check if file exists
+    if fileManager.fileExists(atPath: "/Users/rafael-moreira/school/csce5280/csce5280-ios-flutter/move/Model/MyPlayground.playground/Resources/model.tflite") {
+        print("File exists")
+    } else {
+        print("File does not exist")
+    }
 
-//    let file = "labels.txt"
-//
-//    var result = ""
-//
-//    //if you get access to the directory
-//    if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-//
-//        //prepare file url
-//        let fileURL = dir.appendingPathComponent(file)
-//
-//        do {
-//            print(fileURL)
-//            result = try String(contentsOf: fileURL, encoding: .utf8)
-//            print("result")
-//        }
-//        catch {
-//            print("caught: \(error)")
-//        }
-//    }
-//
-//    print(result)
+//     Allocate memory for the model's input `Tensor`s.
+    try interpreter.allocateTensors()
     
+    var arr = [Data]()
+    for x in mydata2 {
+        arr.append(Data(copyingBufferOf: x))
+    }
     
+    let inputData = Data(copyingBufferOf: arr)  // Should be initialized
+//     input data preparation...
+   
+    // Copy the input data to the input `Tensor`.
+    try interpreter.copy(inputData, toInputAt: 0)
+
+    // Run inference by invoking the `Interpreter`.
+    try interpreter.invoke()
+
+    // Get the output `Tensor`
+    let outputTensor = try interpreter.output(at: 0)
+
+    // Copy output to `Data` to process the inference results.
+    let outputSize = outputTensor.shape.dimensions.reduce(1, {x, y in x * y})
+    let outputData =
+        UnsafeMutableBufferPointer<Float32>.allocate(capacity: outputSize)
+    outputTensor.data.copyBytes(to: outputData)
+    
+    let fileContents = try? String(contentsOfFile: "/Users/rafael-moreira/school/csce5280/csce5280-ios-flutter/move/Model/MyPlayground.playground/Resources/labels.txt")
+    let labels = fileContents?.components(separatedBy: "\n")
+    print(labels)
+    for i in 0 ..< labels!.count {
+        if let probability:Float32? = outputData[i] {
+        print("\(labels![i]): \(probability!)")
+      }
+    }
     
 } catch {
         print("caught: \(error)")

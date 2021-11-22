@@ -17,6 +17,8 @@
 		67AC424C272450E20040D982 /* menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AC424B272450E20040D982 /* menu.swift */; };
 		67AC424E272454DF0040D982 /* actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AC424D272454DF0040D982 /* actions.swift */; };
 		AAE5A08CE8D1DDC8F8FBFAAE /* Pods_move.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432A126DB41AE88D430FE53E /* Pods_move.framework */; };
+		DDD359A9274C307300480995 /* labels.txt in Resources */ = {isa = PBXBuildFile; fileRef = DDD359A7274C307300480995 /* labels.txt */; };
+		DDD359AA274C307300480995 /* model.tflite in Resources */ = {isa = PBXBuildFile; fileRef = DDD359A8274C307300480995 /* model.tflite */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		94B0FA19D71292F0BBDCD871 /* Pods-move.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-move.release.xcconfig"; path = "Target Support Files/Pods-move/Pods-move.release.xcconfig"; sourceTree = "<group>"; };
 		DD23917A272B951500EE0DD7 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		DD9828F727430D80009FEB4F /* MyPlayground2.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground2.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		DDD359A7274C307300480995 /* labels.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = labels.txt; path = tabs/labels.txt; sourceTree = "<group>"; };
+		DDD359A8274C307300480995 /* model.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; name = model.tflite; path = tabs/model.tflite; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 		67191BAF2723BD970036E9EB = {
 			isa = PBXGroup;
 			children = (
+				DDD359A7274C307300480995 /* labels.txt */,
+				DDD359A8274C307300480995 /* model.tflite */,
 				DD31BB5A272A5D2B005C9F3B /* Model */,
 				67AC424A272450BC0040D982 /* tabs */,
 				67191BBA2723BD970036E9EB /* move */,
@@ -185,9 +191,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDD359AA274C307300480995 /* model.tflite in Resources */,
 				67191BC32723BD990036E9EB /* Preview Assets.xcassets in Resources */,
 				6774CB6E2725D2FF00973314 /* data.txt in Resources */,
 				67191BC02723BD990036E9EB /* Assets.xcassets in Resources */,
+				DDD359A9274C307300480995 /* labels.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,7 +367,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "newdatamodel.tflite labels.txt move/Preview\\ Content";
+				DEVELOPMENT_ASSET_PATHS = "move/Preview\\ Content";
 				DEVELOPMENT_TEAM = ZC6M768RJ2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -390,7 +398,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "newdatamodel.tflite labels.txt move/Preview\\ Content";
+				DEVELOPMENT_ASSET_PATHS = "move/Preview\\ Content";
 				DEVELOPMENT_TEAM = ZC6M768RJ2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
